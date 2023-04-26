@@ -75,7 +75,7 @@ const Main = () => {
   return (
     <>
       <p className="date">
-        {year}년 {month}월 {date}일
+        {year}년 {month}월 {date}일 || TodoList
       </p>
       <Input text={text} onKeyDown={onKeyDown} onChange={onChange} />
       <div className="listBox">
