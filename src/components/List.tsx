@@ -16,8 +16,8 @@ const List = ({ id, content, onDelete }: ListProps) => {
   return (
     <>
       <ul className="list">
-        <span className="list-id">{id}:</span>
-        <span className="list-content">{content}</span>
+        <p className="listId">{id}:</p>
+        <p className="listContent">{content}</p>
         <Delete onClick={() => onDelete(id)} />
       </ul>
     </>
