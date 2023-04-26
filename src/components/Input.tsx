@@ -3,13 +3,19 @@ import "../styles/Main.css";
 
 type InputProps = {
   text: string;
+  onKeyDown(e: React.KeyboardEvent<HTMLInputElement>): void;
+  onChange(e: React.ChangeEvent<HTMLInputElement>): void;
 };
 
-const Input = ({ text }: InputProps) => {
+const Input = ({ text, onKeyDown, onChange }: InputProps) => {
   return (
-    <div>
-      <input placeholder="할 일을 입력해주세요." className="input" />
-    </div>
+    <input
+      placeholder="enter the content and press Enter"
+      className="input"
+      onChange={onChange}
+      value={text}
+      onKeyDown={onKeyDown}
+    />
   );
 };
 

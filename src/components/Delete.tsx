@@ -1,11 +1,14 @@
 import React from 'react';
 import { FiDelete } from "react-icons/fi";
 
+type DeleteProps = {
+    onClick? () : void;
+}
 
-const Delete = () => {
+const Delete = ({onClick}:DeleteProps) => {
     return (
         <div>
-            <FiDelete className='deleteBtn'/>
+            <FiDelete className='deleteBtn' onClick={onClick}/>
         </div>
     );
 };
