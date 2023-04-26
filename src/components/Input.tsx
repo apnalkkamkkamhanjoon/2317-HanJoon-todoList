@@ -10,7 +10,7 @@ type InputProps = {
 const Input = ({ text, onKeyDown, onChange }: InputProps) => {
   return (
     <input
-      placeholder="enter the content and press Enter"
+      placeholder="enter todo and press Enter"
       className="input"
       onChange={onChange}
       value={text}
