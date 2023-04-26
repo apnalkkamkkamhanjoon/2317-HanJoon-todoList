@@ -4,15 +4,15 @@ import Input from "../components/Input";
 import List from "../components/List";
 import { RiDeleteBin2Line } from "react-icons/ri";
 
+let today = new Date();
+let year = today.getFullYear();
+let month = ("0" + (today.getMonth() + 1)).slice(-2);
+let date = ("0" + today.getDate()).slice(-2);
+
 type listProps = {
   id: number;
   content: string;
 };
-
-let today = new Date();
-let year = today.getFullYear(); // 년도
-let month = ("0" + (today.getMonth() + 1)).slice(-2);
-let date = ("0" + today.getDate()).slice(-2);
 
 const Main = () => {
   // state 선언
@@ -34,7 +34,7 @@ const Main = () => {
 
   // list가 업데이트 될때 localStorage에 저장
   useEffect(() => {
-    localStorage.setItem("list", JSON.stringify(list)); // list의 값을 JSON 문자열로 변환하여 list 항목에 저장합니다.
+    localStorage.setItem("list", JSON.stringify(list)); // list의 값을 JSON 문자열로 변환하여 list 항목에 저장
   }, [list]);
 
   // 엔터키 쳤을 때 실행되는 함수
