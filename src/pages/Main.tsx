@@ -13,9 +13,6 @@ let today = new Date();
 let year = today.getFullYear(); // 년도
 let month = ("0" + (today.getMonth() + 1)).slice(-2);
 let date = ("0" + today.getDate()).slice(-2);
-let week = new Array("일", "월", "화", "수", "목", "금", "토");
-let day = today.getDay(); // 요일
-let dayName = week[today.getDay()];
 
 const Main = () => {
   // state 선언
