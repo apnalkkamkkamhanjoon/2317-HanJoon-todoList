@@ -8,6 +8,14 @@ type listProps = {
   content: string;
 };
 
+let today = new Date();
+let year = today.getFullYear(); // 년도
+let month = ("0" + (today.getMonth() + 1)).slice(-2);
+let date = ("0" + today.getDate()).slice(-2);
+let week = new Array("일", "월", "화", "수", "목", "금", "토");
+let day = today.getDay(); // 요일
+let dayName = week[today.getDay()];
+
 const Main = () => {
   // state 선언
   const [text, setText] = useState("");
@@ -17,7 +25,7 @@ const Main = () => {
   });
   const [nextId, setNextId] = useState(list.length + 1);
 
-  // 컴포넌트가 마운트 될 때, 로컬 스토리지에서 데이터를 가져와 초기 상태를 설정
+  // 컴포넌트가 띄워질 때, 로컬 스토리지에서 데이터를 가져와 초기 상태를 설정
   useEffect(() => {
     const saveList = localStorage.getItem("list");
     if (saveList) {
@@ -66,6 +74,9 @@ const Main = () => {
 
   return (
     <>
+      <p className="date">
+        {year}년 {month}월 {date}일
+      </p>
       <Input text={text} onKeyDown={onKeyDown} onChange={onChange} />
       <div className="listBox">
         {list.map((item) => (

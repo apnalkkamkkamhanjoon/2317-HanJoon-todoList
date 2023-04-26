@@ -3,6 +3,14 @@ body {
   margin: 0;
 }
 
+.date{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
 .input {
   position: absolute;
   width: 24vw;
