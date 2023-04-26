@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "../styles/Main.css";
 import Input from "../components/Input";
 import List from "../components/List";
+import { RiDeleteBin2Line } from "react-icons/ri";
 
 type listProps = {
   id: number;
@@ -70,6 +71,15 @@ const Main = () => {
   const onDelete = (id: number) => {
     const newList = list.filter((prop) => prop.id !== id);
     onSetList(newList);
+    if (newList.length === 0) {
+      setNextId(1);
+    }
+  };
+
+  const onDeleteAll = () => {
+    setList([]);
+    setNextId(1);
+    localStorage.removeItem("list");
   };
 
   return (
@@ -88,6 +98,7 @@ const Main = () => {
           />
         ))}
       </div>
+      <RiDeleteBin2Line className="deleteAllBtn" onClick={onDeleteAll} />
     </>
   );
 };
